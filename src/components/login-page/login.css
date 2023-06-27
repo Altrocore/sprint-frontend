@@ -1,0 +1,49 @@
+.logo-wrap {
+  display: flex;
+  justify-content: center;
+  padding-top: 80px;
+}
+.main-container {
+  height: 100vh;
+  width: 100%;
+  background: #937B7B;
+}
+.login-form {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.login-inp {
+  width: 456px;
+  height: 52px;
+  margin: 20px 0;
+  border: none;
+  border-bottom: 1px solid #fff;
+  background-color: transparent;
+  outline: none;
+  color: #FFF;
+  font-size: 30px;
+}
+.login-inp::placeholder {
+  color: #FFF;
+  font-size: 30px;
+  font-family: Sorts Mill Goudy;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px #937B7B inset !important;
+}
+.sign-btn {
+width: 456px;
+height: 55px;
+flex-shrink: 0;
+background: #2887DF;
+font-size: 30px;
+color: #FFF;
+border: none;
+margin-top: 80px;
+}

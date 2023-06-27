@@ -1,0 +1,30 @@
+.search-inp {
+    border-radius: 24px;
+    border: 1px solid rgba(0, 0, 0, 0.78);
+    width: 433px;
+    height: 52px;
+    margin: 20px 0;
+    font-size: 30px;
+}
+.search-inp::-webkit-input-placeholder { /* Edge */
+    color: #0000007A;
+    font-size: 24px;
+    padding-left: 20px;
+  }
+.search-inp:hover {
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.nav-ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    margin: 0;
+}
+.nav-icon {
+    margin: 20px;
+    cursor: pointer;
+}
+.fav-prof-cont img {
+    margin: 5px 30px;
+    position: relative;
+}
