@@ -1,8 +1,9 @@
 import './popup.css'
 import { useRef, useEffect } from 'react';
+import { useMyContext } from '../../Context';
 
-function Popup({login, toggle, setLogin}) {
-
+function Popup({toggle, changeIsLogged}) {
+  const { login, updateContext } = useMyContext();
   const ref = useRef();
 
 	useEffect(() => {
@@ -18,11 +19,9 @@ function Popup({login, toggle, setLogin}) {
   }, [ref]);
 
   const logout = () => {
-    sessionStorage.clear();
-    sessionStorage.setItem('isSaved', false)
+    updateContext('');
     toggle(false);
-    setLogin('');
-    console.log(sessionStorage.getItem('isSaved'))
+    changeIsLogged(false)
   }
 
   return (

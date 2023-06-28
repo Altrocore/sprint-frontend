@@ -1,68 +1,58 @@
 .products-box {
-    display: grid;
-    grid-template-rows: 377px 555px;
+    display: flex;
+    flex-direction: column;
 }
 
 .products-box1 {
-    display: grid;
-    grid-template-rows: 85.5px 100.5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 32vh;
     width: 100%;
     background: #C3C1BA;
 }
 
 .products-box2 {
-    display: grid;
-    grid-template-rows: 277.5px 277.5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
     width: 100%;
-    background: url("../../images/bg.png"), lightgray 50% / cover no-repeat;
+    background: url("../../images/bg.png") no-repeat;
+    background-size: 130%;
 }
 
 .tag-1 {
     color: #2B2929;
     text-align: center;
     font-size: 32px;
-    font-family: Sorts Mill Goudy;
+    font-family: Sorts Mill Goudy, sans-serif;
     text-decoration-line: underline;
-    padding-top: 32px;
+    padding-bottom: 32px;
 }
 
 .selection {
     background: white;
-    width: 792px;
-    height: 188px;
-    display: grid;
-    margin-left: 324px;
-    margin-right: 324px;
-    grid-template-rows: 188px;
-    grid-template-columns: 198px 198px 198px 198px;
-}
-
-.flowers {
-    display: grid;
-    padding-left: 243px;
-    padding-right: 243px;
-    grid-template-columns: 81px 792px 81px;
-    height: 100%;
     position: relative;
+    width: 792px;
 }
 
 .img-1 {
     position: absolute;
-    top: -75px;
-    left: 570px;
+    top: -94px;
+    left: -94px;
     width: 240;
     height: 240;
-    //grid-row: 1/3;
-    //grid-column: 1/1;
     z-index: 1;
 }
 
 .img-2 {
     position: absolute;
-    top: 45px;
-    right: 630px;
-    width: 240;
-    height: 240;
+    top: 40px;
+    right: -100px;
+    width: 240px;
+    height: 240px;
     z-index: 1;
 }
 
@@ -85,23 +75,22 @@
     width: 198;
     height: 188;
 }
-
+.products-wrap {
+    width: 55%;
+}
 .box-1 {
     margin-top: 56px;
     display: grid;
-    grid-template-columns: 278px 169px 169px 169px 169px 275px;
-    grid-gap: 71px;
-    margin-left: 278px;
-    margin-right: 275px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 100px;
     margin-bottom: 49px;
 }
 
 .box-2 {
     display: grid;
-    grid-template-columns: 278px 169px 169px 169px 169px 275px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 71px;
-    margin-left: 278px;
-    margin-right: 275px;
     margin-top: 49px;
 }
 

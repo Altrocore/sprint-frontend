@@ -7,7 +7,7 @@ import profile from '../../images/profile.png'
 import Popup from '../popup/Popup'
 import { useState } from 'react'
 
-function NavBar({login, setLogin}) {
+function Navbar({changeIsLogged}) {
 
 	const [isPopup, togglePopup] = useState(false);
 
@@ -29,11 +29,11 @@ function NavBar({login, setLogin}) {
 				<li className='nav-icon fav-prof-cont'>
 					<img alt='favourite icon' src={favourite}/>
 					<img onClick={()=> togglePopup(!isPopup)} alt='profile icon' src={profile}/>
-					{isPopup && <Popup setLogin={setLogin} login={login} toggle={togglePopup}></Popup>}
+					{isPopup && <Popup changeIsLogged={changeIsLogged} toggle={togglePopup}></Popup>}
 				</li>
 			</ul>
 		</nav>
 	)
 }
 
-export default NavBar;
+export default Navbar;

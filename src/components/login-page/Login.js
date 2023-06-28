@@ -1,15 +1,14 @@
 import './login.css'
 import rectangle from '../../images/Rectangle.png'
 import { useState } from 'react';
-
-function Login({setLogin}) {
+import { useMyContext } from '../../Context'
+function Login({changeIsLogged}) {
 
   const [form, setForm] = useState({
     login: '',
     password: '',
-    isSaved: false
   });
-
+  const { login, updateContext } = useMyContext();
   const onUpdateField = e => {
     const nextFormState = {
       ...form,
@@ -19,18 +18,8 @@ function Login({setLogin}) {
   };
 
   const saveData = () => {
-    //saving userdata to session storage
-    const nextFormState = {
-      ...form,
-      isSaved: true,
-    };
-    setForm(nextFormState);
-    for (let key in form) {
-      sessionStorage.setItem(key, form[key]);
-    }
-    let value = sessionStorage.getItem('login');
-    setLogin(value)
-    console.log(value)
+    updateContext(form.login);
+    changeIsLogged(true);
   };
 
   const onSubmitForm = e => {
