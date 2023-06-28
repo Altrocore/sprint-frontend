@@ -5,9 +5,12 @@ import cart from '../../images/cart.png'
 import favourite from '../../images/favourite.png'
 import profile from '../../images/profile.png'
 import Popup from '../popup/Popup'
-import { useState } from 'react'
+import { useState, useContext } from 'react'
+import { CartContext } from '../Products/CartContext'
 
 function Navbar({changeIsLogged}) {
+
+	const { cartCount } = useContext(CartContext);
 
 	const [isPopup, togglePopup] = useState(false);
 
@@ -24,6 +27,7 @@ function Navbar({changeIsLogged}) {
 					<input className='search-inp' placeholder='Search'/>
 				</li>
 				<li className='nav-icon'>
+					<span className='cart-count'>{cartCount}</span>
 					<img alt='cart icon' src={cart}/>
 				</li>
 				<li className='nav-icon fav-prof-cont'>

@@ -1,8 +1,19 @@
-import React from 'react';
+import React, { useState, useContext } from 'react';
 import './Products.css';
 import Image from '../../images/index.js';
+import products from '../../data.js';
+import { CartContext } from './CartContext';
 
 const Products = () => {
+    const [cartItems, setCartItems] = useState([]);
+    const { addToCart } = useContext(CartContext);
+
+    const handleAddToCart = () => {
+        addToCart();
+    };
+    /*const addToCart = (product) => {
+        setCartItems((prevCartItems) => [...prevCartItems, product]);
+    };*/
     return (
         <div className='products-box'>
             <div className='products-box1'>
@@ -18,14 +29,13 @@ const Products = () => {
             </div>
             <div className='products-box2'>
                 <div className='box-1'>
-                    <div className='item'><img src={Image.ring8} alt=""/></div>
-                    <div className='item'><img src={Image.ring6} alt=""/></div>
-                    <div className='item'><img src={Image.ring4} alt=""/></div>
-                    <div className='item'><img src={Image.ring2} alt=""/></div>
-                    <div className='item'><img src={Image.ring62} alt=""/></div>
-                    <div className='item'><img src={Image.ring5} alt=""/></div>
-                    <div className='item'><img src={Image.ring7} alt=""/></div>
-                    <div className='item'><img src={Image.ring1} alt=""/></div>
+                    {products.map((product) => (
+                        <div className='item' key={product.id}>
+                            <img src={product.image} alt="img"/>
+                            <p>{product.price}</p>
+                            <button onClick={handleAddToCart} className='btn-cart'>Add to Cart</button>
+                        </div>
+                    ))}
                 </div>
             </div>
         </div>
